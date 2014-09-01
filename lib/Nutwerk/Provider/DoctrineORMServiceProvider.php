@@ -96,7 +96,7 @@ class DoctrineORMServiceProvider implements ServiceProviderInterface
                 switch($entity['type']) {
                     case 'default':
                     case 'annotation':
-                        $driver = $config->newDefaultAnnotationDriver((array)$entity['path']);
+                        $driver = $config->newDefaultAnnotationDriver((array)$entity['path'], $entity['simpleAnnotationReader']);
                         $chain->addDriver($driver, $entity['namespace']);
                         break;
                     case 'yml':
