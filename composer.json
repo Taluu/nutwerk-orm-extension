@@ -1,5 +1,5 @@
 {
-    "name": "taluu/doctrine-orm-provider",
+    "name": "pcelta/doctrine-orm-provider",
     "description": "Doctrine ORM provider for Silex",
     "keywords": ["silex", "doctrine", "orm", "database", "extension", "provider"],
     "homepage": "https://github.com/taluu/nutwerk-orm-extension",
