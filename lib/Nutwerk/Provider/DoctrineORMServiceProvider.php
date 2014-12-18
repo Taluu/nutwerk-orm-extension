@@ -10,6 +10,7 @@
 
 namespace Nutwerk\Provider;
 
+use Doctrine\Common\Annotations\AnnotationRegistry;
 use \Doctrine\DBAL\Configuration as DBALConfiguration,
     \Doctrine\DBAL\DriverManager;
 
@@ -96,8 +97,10 @@ class DoctrineORMServiceProvider implements ServiceProviderInterface
                 switch($entity['type']) {
                     case 'default':
                     case 'annotation':
-                        $driver = $config->newDefaultAnnotationDriver((array)$entity['path']);
+                        $reader = new AnnotationReader();
+                        $driver = new AnnotationDriver($reader, $entity['path']);
                         $chain->addDriver($driver, $entity['namespace']);
+                        AnnotationRegistry::registerLoader('class_exists');
                         break;
                     case 'yml':
                         $driver = new YamlDriver((array)$entity['path']);
