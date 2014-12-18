@@ -15,7 +15,7 @@
         "doctrine/orm": ">= 2.3.0, < 2.4.0-beta",
         "doctrine/common": ">= 2.3.0, < 2.4.0-beta",
         "doctrine/dbal": ">= 2.3.0, < 2.4.0-beta",
-        "silex/silex": "1.0.*"
+        "silex/silex": ">=  1.0, <= 1.2"
     },
 
     "suggest": {
